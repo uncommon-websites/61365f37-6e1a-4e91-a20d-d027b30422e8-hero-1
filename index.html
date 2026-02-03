@@ -5,24 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sway Hero Section</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
         }
         .font-display {
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        @keyframes gradient-shift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        .animate-gradient {
+            background-size: 200% 200%;
+            animation: gradient-shift 8s ease infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
         }
     </style>
 </head>
-<body class="bg-white text-black antialiased">
+<body class="bg-gradient-to-br from-purple-50 via-white to-cyan-50 text-black antialiased">
 
     <!-- Top Announcement Bar -->
-    <div class="bg-[#9EE8F7] py-2.5 px-4 text-center text-[13px] font-medium text-slate-900">
-        Sway is turning 168M scrollers into 168M voters. 🗳️
-        <span class="mx-2 text-slate-400">|</span>
-        <a href="#" class="inline-flex items-center hover:underline">
-            Learn more 
+    <div class="bg-gradient-to-r from-[#FF006E] via-[#8338EC] to-[#3A86FF] animate-gradient py-3 px-4 text-center text-[14px] font-bold text-white">
+        🔥 Sway is turning 168M scrollers into 168M voters. 🗳️
+        <a href="#" class="ml-3 inline-flex items-center hover:underline bg-white/20 px-3 py-1 rounded-full text-xs backdrop-blur-sm">
+            Join the movement ✨
             <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
         </a>
     </div>
@@ -31,13 +45,13 @@
     <nav class="max-w-[1400px] mx-auto px-6 py-5 flex items-center justify-between">
         <!-- Logo -->
         <div class="flex items-center gap-2">
-            <div class="w-8 h-8 bg-black text-white flex items-center justify-center rounded-sm">
+            <div class="w-9 h-9 bg-gradient-to-br from-[#FF006E] to-[#8338EC] text-white flex items-center justify-center rounded-xl shadow-lg">
                 <!-- Abstract Logo Icon -->
                 <svg viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                     <path d="M4 4h8v8H4V4zm12 0h4v4h-4V4zm0 8h4v8h-8v-4h4v-4zm-8 4v4H4v-8h4v4z" />
                 </svg>
             </div>
-            <span class="text-xl font-bold tracking-tight">Sway</span>
+            <span class="text-2xl font-black tracking-tight bg-gradient-to-r from-[#8338EC] to-[#3A86FF] bg-clip-text text-transparent">Sway</span>
         </div>
 
         <!-- Nav Links -->
@@ -60,8 +74,8 @@
 
         <!-- Auth Buttons -->
         <div class="flex items-center gap-3">
-            <button class="px-4 py-2 text-sm font-medium border border-gray-300 rounded hover:bg-gray-50 transition-colors">Sign In</button>
-            <button class="px-4 py-2 text-sm font-medium bg-[#6200ff] text-white rounded hover:bg-[#5200d6] transition-colors">Mobilize Now</button>
+            <button class="px-5 py-2.5 text-sm font-bold border-2 border-black rounded-full hover:bg-black hover:text-white transition-all">Sign In</button>
+            <button class="px-5 py-2.5 text-sm font-bold bg-gradient-to-r from-[#FF006E] to-[#8338EC] text-white rounded-full hover:shadow-lg hover:scale-105 transition-all">Mobilize Now ⚡</button>
         </div>
     </nav>
 
@@ -70,47 +84,50 @@
         <div class="max-w-6xl mx-auto px-4 text-center">
             
             <!-- Headline -->
-            <h1 class="font-display text-[60px] md:text-[90px] leading-[0.85] font-bold uppercase tracking-tighter text-[#6200ff] mb-8">
-                LIKES DON'T<br>
-                WIN ELECTIONS.<br>
-                VOTES DO.
+            <h1 class="font-display text-[60px] md:text-[100px] leading-[0.9] font-bold uppercase tracking-tight mb-8">
+                <span class="bg-gradient-to-r from-[#FF006E] via-[#8338EC] to-[#3A86FF] bg-clip-text text-transparent animate-gradient">LIKES DON'T</span><br>
+                <span class="text-black">WIN ELECTIONS.</span><br>
+                <span class="bg-gradient-to-r from-[#3A86FF] via-[#8338EC] to-[#FF006E] bg-clip-text text-transparent animate-gradient">VOTES DO.</span>
             </h1>
 
             <!-- Subheadline -->
-            <p class="text-xl md:text-2xl font-bold text-[#111] tracking-tight mb-10">
-                Turn your social following into a verified voting power bloc.
+            <p class="text-xl md:text-3xl font-black text-black tracking-tight mb-10 max-w-3xl mx-auto">
+                Turn your social following into a verified voting power bloc. 💪
             </p>
 
             <!-- CTA Buttons -->
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">
-                <button class="h-12 px-6 bg-[#111] text-white rounded-md font-medium flex items-center gap-2 hover:bg-black transition-colors group">
-                    Get started
-                    <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                <button class="h-14 px-8 bg-gradient-to-r from-[#FF006E] to-[#8338EC] text-white rounded-full font-bold text-lg flex items-center gap-2 hover:shadow-2xl hover:scale-105 transition-all group shadow-lg">
+                    Get started 🚀
+                    <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                 </button>
-                <button class="h-12 px-6 bg-white text-[#111] border border-gray-300 rounded-md font-medium flex items-center gap-2 hover:bg-gray-50 transition-colors">
-                    Watch the Magic
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <button class="h-14 px-8 bg-white text-black border-2 border-black rounded-full font-bold text-lg flex items-center gap-2 hover:bg-black hover:text-white transition-all shadow-md">
+                    Watch the Magic ✨
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                 </button>
             </div>
 
         </div>
 
         <!-- Hero Image Container -->
-        <div class="w-full relative h-[400px] md:h-[600px] overflow-hidden">
+        <div class="w-full relative h-[400px] md:h-[600px] overflow-hidden rounded-t-3xl shadow-2xl">
             <!-- Main Background Image -->
-            <img src="https://imolwncbqxugevwmleed.supabase.co/storage/v1/object/public/public-assets/hero-images/61365f37-6e1a-4e91-a20d-d027b30422e8/hero-1-img-0-1770096244836.png" alt="Woman working" class="w-full h-full object-cover object-top">
+            <img src="https://imolwncbqxugevwmleed.supabase.co/storage/v1/object/public/public-assets/hero-images/61365f37-6e1a-4e91-a20d-d027b30422e8/hero-1-img-0-1770096368356.png" alt="Woman working" class="w-full h-full object-cover object-top">
+            
+            <!-- Gradient Overlay for vibrancy -->
+            <div class="absolute inset-0 bg-gradient-to-tr from-purple-500/10 via-transparent to-cyan-500/10 pointer-events-none"></div>
             
             <!-- Floating UI Card Overlay -->
-            <div class="absolute bottom-16 right-4 md:right-24 lg:right-48 bg-black/60 backdrop-blur-md border border-white/10 rounded-xl p-4 flex items-center gap-4 max-w-sm shadow-2xl animate-fade-in-up">
+            <div class="absolute bottom-16 right-4 md:right-24 lg:right-48 bg-white backdrop-blur-md border-2 border-black rounded-2xl p-5 flex items-center gap-4 max-w-sm shadow-2xl animate-float">
                 <!-- Check Icon Box -->
-                <div class="w-10 h-10 bg-[#5F6F50] rounded flex items-center justify-center border border-white/20 shrink-0">
-                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                <div class="w-12 h-12 bg-gradient-to-br from-[#10B981] to-[#059669] rounded-xl flex items-center justify-center shrink-0 shadow-lg">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
                 </div>
                 
                 <!-- Text Content -->
                 <div class="text-left">
-                    <div class="text-gray-300 text-xs font-medium mb-0.5">Voter Verified</div>
-                    <div class="text-white text-sm font-bold leading-tight">@activist_alex just joined your bloc.</div>
+                    <div class="text-purple-600 text-xs font-black mb-1 uppercase tracking-wide">✓ Voter Verified</div>
+                    <div class="text-black text-base font-bold leading-tight">@activist_alex just joined your bloc! 🎉</div>
                 </div>
             </div>
         </div>
